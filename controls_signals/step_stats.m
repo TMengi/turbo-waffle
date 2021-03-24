@@ -6,8 +6,16 @@ function [tr, tp, Mp, ts, ess] = step_stats(t, x, ref)
 % x: data vector
 % ref: step reference value
 % 
-% returns:
-% 
+% returns
+%   rise time: time for the signal to go from 10% to 90% of its
+%       steady-state value
+%   peak time: time when the signal achieves its maximum value
+%   peak overshoot: amount by which the maximum value exceeds the
+%       steady-state value, expressed as a percentage of the steady-state
+%   settling time: time for the signal to decay to within 1% of its
+%       steady-state value
+%   steady-state error: difference between reference value and steady-state
+%       value
 
 % initial and final values
 x0 = x(1);
